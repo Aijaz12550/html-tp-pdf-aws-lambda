@@ -1,0 +1,21 @@
+
+
+service: html-to-pdf
+
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+
+
+
+functions:
+  hello:
+    handler: handler.hello
+    memorySize: 1024
+    events:
+      - http:
+          method: POST
+          cors: true
+          path: /hello
